@@ -46,6 +46,7 @@ planner_configs:
     goal_bias: 0.05  # When close to goal select goal, with this probability? default: 0.05
     delay_collision_checking: 1  # Stop collision checking as soon as C-free parent found. default 1
     solve_once: 1 # Stop solve loop once the first solution is found regardless of planner termination condition
+    simple_goal: 1 # Switch the goal object to a simple GoalState object
   RTRRTstarkConfigDefault:
     type: geometric::RTRRTstar
     # optimization_objective: MaximizeMinClearanceObjective

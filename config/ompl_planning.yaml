@@ -45,6 +45,7 @@ planner_configs:
     range: 3.0  # Max motion added to tree. ==> maxDistance_ default: 0.0, if 0.0, set on setup()
     goal_bias: 0.05  # When close to goal select goal, with this probability? default: 0.05
     delay_collision_checking: 1  # Stop collision checking as soon as C-free parent found. default 1
+    use_k_nearest: 0 # When false, use R-nearest neighbor search instead of K-nearest
     solve_once: 1 # Stop solve loop once the first solution is found regardless of planner termination condition
     simple_goal: 1 # Switch the goal object to a simple GoalState object
   RTRRTstarkConfigDefault:
@@ -54,6 +55,7 @@ planner_configs:
     range: 3.0  # Max motion added to tree. ==> maxDistance_ default: 0.0, if 0.0, set on setup()
     goal_bias: 0.05  # When close to goal select goal, with this probability? default: 0.05
     delay_collision_checking: 1  # Stop collision checking as soon as C-free parent found. default 1
+    use_k_nearest: 0 # When false, use R-nearest neighbor search instead of K-nearest
     check_shortest_path: 0 # check if shortest path to goal is free and add to tree if it is
   TRRTkConfigDefault:
     type: geometric::TRRT

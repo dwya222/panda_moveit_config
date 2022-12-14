@@ -57,6 +57,7 @@ planner_configs:
     delay_collision_checking: 1  # Stop collision checking as soon as C-free parent found. default 1
     use_k_nearest: 0 # When false, use R-nearest neighbor search instead of K-nearest
     check_shortest_path: 0 # check if shortest path to goal is free and add to tree if it is
+    sampling_density: 3.0 # If the near neighbors exceed this density, don't add the sample to the tree
   TRRTkConfigDefault:
     type: geometric::TRRT
     range: 0.0  # Max motion added to tree. ==> maxDistance_ default: 0.0, if 0.0, set on setup()

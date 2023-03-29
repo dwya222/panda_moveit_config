@@ -46,8 +46,10 @@ planner_configs:
     goal_bias: 0.05  # When close to goal select goal, with this probability? default: 0.05
     delay_collision_checking: 1  # Stop collision checking as soon as C-free parent found. default 1
     use_k_nearest: 0 # When false, use R-nearest neighbor search instead of K-nearest
-    solve_once: 1 # Stop solve loop once the first solution is found regardless of planner termination condition
+    enable_ros_comm: 1 # When true, initialize ros comms to allow planner to be preempted and to publish solution paths
     simple_goal: 1 # Switch the goal object to a simple GoalState object
+    max_neighbors: 100 # If the near neighbors exceeds this number, don't add the sample to the tree
+    nearest_neighbor: 0.1 # If the nearest neighbor is closer than this, don't add the sample to the tree
   RTRRTstarkConfigDefault:
     type: geometric::RTRRTstar
     # optimization_objective: MaximizeMinClearanceObjective
@@ -57,8 +59,10 @@ planner_configs:
     delay_collision_checking: 1  # Stop collision checking as soon as C-free parent found. default 1
     use_k_nearest: 0 # When false, use R-nearest neighbor search instead of K-nearest
     check_shortest_path: 0 # check if shortest path to goal is free and add to tree if it is
-    max_neighbors: 20 # If the near neighbors exceeds this number, don't add the sample to the tree
-    nearest_neighbor: 0.5 # If the nearest neighbor is closer than this, don't add the sample to the tree
+    max_neighbors: 100 # If the near neighbors exceeds this number, don't add the sample to the tree
+    nearest_neighbor: 0.1 # If the nearest neighbor is closer than this, don't add the sample to the tree
+    prime_tree: 1 # When true, spend time building tree initially before outputting a solution path
+    prime_tree_secs: 5.0 # Amount of seconds to initially prime the tree for
   TRRTkConfigDefault:
     type: geometric::TRRT
     range: 0.0  # Max motion added to tree. ==> maxDistance_ default: 0.0, if 0.0, set on setup()

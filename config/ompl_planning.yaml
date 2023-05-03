@@ -59,6 +59,7 @@ planner_configs:
     delay_collision_checking: 1  # Stop collision checking as soon as C-free parent found. default 1
     use_k_nearest: 0 # When false, use R-nearest neighbor search instead of K-nearest
     check_shortest_path: 0 # check if shortest path to goal is free and add to tree if it is
+    enable_root_rewiring: 1 # enable root rewiring process
     max_neighbors: 100 # If the near neighbors exceeds this number, don't add the sample to the tree
     nearest_neighbor: 0.1 # If the nearest neighbor is closer than this, don't add the sample to the tree
     prime_tree: 1 # When true, spend time building tree initially before outputting a solution path

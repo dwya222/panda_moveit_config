@@ -50,8 +50,8 @@ planner_configs:
     simple_goal: 1 # Switch the goal object to a simple GoalState object
     max_neighbors: 100 # If the near neighbors exceeds this number, don't add the sample to the tree
     nearest_neighbor: 0.1 # If the nearest neighbor is closer than this, don't add the sample to the tree
-  RTRRTstarkConfigDefault:
-    type: geometric::RTRRTstar
+  PRTRRTstarkConfigDefault:
+    type: geometric::PRTRRTstar
     # optimization_objective: MaximizeMinClearanceObjective
     # termination_condition: CostConvergence[10,.1]
     range: 3.0  # Max motion added to tree. ==> maxDistance_ default: 0.0, if 0.0, set on setup()
@@ -162,7 +162,7 @@ panda_arm:
     - RRTConnectkConfigDefault
     - RRTstarkConfigDefault
     - RRTstarkConfigRealTimeTesting
-    - RTRRTstarkConfigDefault
+    - PRTRRTstarkConfigDefault
     - TRRTkConfigDefault
     - PRMkConfigDefault
     - PRMstarkConfigDefault
@@ -191,7 +191,7 @@ panda_arm_hand:
     - RRTConnectkConfigDefault
     - RRTstarkConfigDefault
     - RRTstarkConfigRealTimeTesting
-    - RTRRTstarkConfigDefault
+    - PRTRRTstarkConfigDefault
     - TRRTkConfigDefault
     - PRMkConfigDefault
     - PRMstarkConfigDefault
@@ -219,7 +219,7 @@ hand:
     - RRTConnectkConfigDefault
     - RRTstarkConfigDefault
     - RRTstarkConfigRealTimeTesting
-    - RTRRTstarkConfigDefault
+    - PRTRRTstarkConfigDefault
     - TRRTkConfigDefault
     - PRMkConfigDefault
     - PRMstarkConfigDefault
